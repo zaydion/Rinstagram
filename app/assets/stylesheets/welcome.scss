@@ -1,7 +1,7 @@
-// Place all the styles related to the Welcome controller here.
+/*// Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+*/
 
 .icon-block {
   padding: 0 15px;
@@ -28,6 +28,9 @@
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+
+
+
 .materialize-red.lighten-5 {
   background-color: #fdeaeb !important;
 }
@@ -2233,7 +2236,6 @@ html {
  */
 body {
   margin: 0;
-  background-image: url("odes.jpg")
 }
 
 /* HTML5 display definitions
@@ -3357,6 +3359,8 @@ nav ul a span.badge {
 .right {
   float: right !important;
 }
+
+.logo-container
 
 .no-select, input[type=range], input[type=range] + .thumb {
   -webkit-touch-callout: none;
@@ -6699,6 +6703,16 @@ nav ul a span.badge {
   margin-right: -0.75rem;
 }
 
+
+.container.light-blue.lighten-1 {
+  width: 100%;
+  margin: 0 !important;
+}
+
+.page-footer.lighten-1 {
+  margin: 0;
+}
+
 .section {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -6708,8 +6722,22 @@ nav ul a span.badge {
   padding: 0;
 }
 
+.parallax-container {
+  height: 45em;
+}
+
+#bottom_image.parallax-container {
+  height: 25em;
+}
+
+.header.center {
+  padding-top: 12%;
+}
+
 .section.no-pad-bot {
   padding-bottom: 0;
+  background-image: url("pumba.jpg");
+  background-size: 100%;
 }
 
 .section.no-pad-top {
@@ -7384,6 +7412,14 @@ nav .brand-logo {
   font-size: 2.1rem;
   padding: 0;
   white-space: nowrap;
+}
+
+a.brand-logo.tag_line:hover {
+	background-color: rgba(0,0,0,0.03);
+}
+
+nav a.brand-logo:hover {
+	background-color: none;
 }
 
 nav .brand-logo.center {
@@ -9768,6 +9804,13 @@ select {
 /***************
     Nav List
 ***************/
+nav.light-blue.lighten-1 {
+  /*This is optional for making navbar stick*/
+  /*position: fixed;*/
+  /*z-index: 100;*/
+}
+
+
 .table-of-contents.fixed {
   position: fixed;
 }

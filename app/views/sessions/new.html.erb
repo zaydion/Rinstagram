@@ -1,15 +1,16 @@
-<h1>Log In</h1>
+<h1 class="login_form">Log In</h1>
 
-
+<div class="login_form">
 <%= form_for :session, url: login_path  do |f |%>
 
     <%= f.label :email %>
     <%= f.email_field :email %>
 
-    <%# f.label :password %>
-    <%# f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
     <%= f.submit "Log in" %>
   <% end %>
+</div>
 
-  <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+<p class="login_form">New user? <%= link_to "Sign up now!", new_user_path %></p>

@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for([@user, @user.posts.build], url: user_posts_path) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -20,9 +20,9 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+    <%= f.label :upload_a_photo %><br>
+    <%= f.file_field :avatar %>
+  </div><br><br>
   <div class="actions">
     <%= f.submit %>
   </div>

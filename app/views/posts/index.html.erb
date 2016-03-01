@@ -15,12 +15,12 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= image_tag post.avatar.url(:medium) %></td>
         <td><%= post.title %></td>
         <td><%= post.description %></td>
-        <td><%= post.user %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= post.user.name %></td>
+        <td><%= link_to 'Show', user_post_path(post.user, post) %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<% if current_user == @user %>
+  <%= link_to 'New Post', new_user_post_path(@user) %>
+<% end %>

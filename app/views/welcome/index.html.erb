@@ -1,19 +1,9 @@
 
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Rinstagram</a>
-<!--       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul> -->
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
+
+    <div class="parallax-container">
+      <div class="parallax"><%= image_tag "pumba.jpg" %></div>
+            <br><br>
       <h1 class="header center white-text">See the world through pictures</h1>
       <div class="row center">
         <h5 class="header col s12 light white-text">A instagram mock using Ruby on Rails.</h5>
@@ -24,12 +14,10 @@
       <%= link_to 'Sign Up', new_user_path, class: "btn-large waves-effect waves-light lime" %>
       </div>
       <br><br>
-
     </div>
-  </div>
 
 
-  <div class="container">
+  <div class="container light-blue lighten-1">
     <div class="section">
 
       <!--   Icon Section   -->
@@ -70,6 +58,10 @@
     </div>
   </div>
 
+    <div id="bottom_image" class="parallax-container">
+      <div class="parallax"><%= image_tag "clearskies.jpg" %></div>
+    </div>
+
   <footer class="page-footer lighten-1">
     <div class="container">
       <div class="row">
@@ -107,7 +99,4 @@
   </footer>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+

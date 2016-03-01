@@ -11,15 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field login_form">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="field login_form">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="actions">
+  <div class="field login_form">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions login_form">
+    <%= f.label :upload_a_profile_picture %><br>
+    <%= f.file_field :avatar %>
+  </div><br><br>
+  <div class="actions login_form">
     <%= f.submit %>
   </div>
 <% end %>
