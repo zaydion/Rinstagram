@@ -17,4 +17,20 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false}
   before_save { self.email = email.downcase }
+
+
+  def feed
+  end
+
+  def follow(user)
+    active_relationships.create(followed_id: user.id)
+  end
+
+  def unfollow(user)
+    active_relationships.find_by(followed_id: user.id).destroy
+  end
+
+  def following?(user)
+    active_relationships.include? user
+  end
 end
