@@ -28,6 +28,6 @@
 
 <br>
 
-<% if current_user == @user %>
+<% if !@user.nil? && current_user == @user %>
   <%= link_to 'New Post', new_user_post_path(@user) %>
 <% end %>

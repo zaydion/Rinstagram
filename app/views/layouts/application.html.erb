@@ -7,11 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <nav class="light-blue lighten-1" role="navigation">
+  <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <%= link_to "Rinstagram", root_path, class: "brand-logo tag_line" %>
       <% if current_user %>
-       <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down">
         <li>
           <%= link_to 'Posts', posts_path %>
         </li>
@@ -23,11 +23,11 @@
         </li>
       </ul>
       <% else %>
-        <ul id="nav-mobile" class="side-nav">
-          <li>
-            <%= link_to 'log in', login_path %>
-          </li>
-        </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li>
+          <%= link_to 'log in', login_path %>
+        </li>
+      </ul>
       <% end %>
 
 
@@ -37,10 +37,10 @@
 
   </nav>
 
-<%= yield %>
+  <%= yield %>
 
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 </body>
 </html>

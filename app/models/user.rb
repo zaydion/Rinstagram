@@ -8,13 +8,11 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  has_secure_password
 
-  validates :name, presence: true, length: { maximum: 50 }
-
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "default_avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  validates :name, presence: true, length: { maximum: 50 }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 115 },
@@ -22,19 +20,21 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false}
   before_save { self.email = email.downcase }
 
+  has_secure_password
+
 
   def feed
   end
 
-  def follow(user)
-    active_relationships.create(followed_id: user.id)
+  def follow(another_user)
+    active_relationships.create(followed_id: another_user.id)
   end
 
-  def unfollow(user)
-    active_relationships.find_by(followed_id: user.id).destroy
+  def unfollow(another_user)
+    active_relationships.find_by(followed_id: another_user.id).destroy
   end
 
-  def following?(user)
-    active_relationships.include? user
+  def following?(another_user)
+    following.include? another_user
   end
 end
