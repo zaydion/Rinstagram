@@ -70,11 +70,17 @@ class UsersController < ApplicationController
   end
 
   def following
-    @following = current_user.following
+    @user = User.find(params[:id])
+    @following = @user.following
   end
 
   def followers
-    @followers = current_user.followers
+    @user = User.find(params[:id])
+    @followers = @user.followers
+  end
+
+  def feed
+    current_user.feed
   end
 
   private

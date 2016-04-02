@@ -1,0 +1,9 @@
+
+<% current_user.feed.each do |post| %>
+        <%= image_tag post.avatar.url(:medium) %>
+        <%= post.title %>
+        <%= post.description %>
+        <%= post.user.name %>
+        <%= link_to 'Show', user_post_path(post.user, post) %>
+
+<% end %>

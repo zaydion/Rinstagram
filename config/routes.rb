@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   get 'following' => 'users#following'
   get 'followers' => 'users#followers'
 
+  get 'feed' => 'users#feed'
+
 end
