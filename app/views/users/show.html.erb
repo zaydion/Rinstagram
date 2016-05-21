@@ -4,7 +4,7 @@
   <%= image_tag @user.avatar.url(:medium), class: "circle responsive-img" %>
 </h1>
   <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', users_path(@user) %>
+  <%= link_to 'Back', users_path %>
 <div class="row">
   <%= link_to following_user_path @user do %>
     <div id="following-count" class="col s1 waves-effect waves-light white blue-text"><%= @user.following.count %> following</div>

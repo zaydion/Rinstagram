@@ -1,0 +1,13 @@
+
+.login_form {
+  width: 50%;
+  margin-left: 25%;
+}
+
+p.login_form {
+  padding: 10px;
+}
+
+h1.login_form {
+  padding: 10px;
+}

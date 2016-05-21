@@ -2,6 +2,17 @@
 <html>
 <head>
   <title>Rinstagram</title>
+
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,40 +21,35 @@
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container">
       <%= link_to "Rinstagram", root_path, class: "brand-logo tag_line" %>
-      <% if current_user %>
-      <ul class="right hide-on-med-and-down">
-        <li>
-          <%= link_to 'all posts', posts_path %>
-        </li>
-        <li>
-          <%= link_to current_user.name, user_path(current_user) %>
-        </li>
-        <li>
-          <%= link_to 'feed', feed_path %>
-        </li>
-        <li>
-          <%= link_to 'log out', logout_path, method: :delete %>
-        </li>
-      </ul>
-      <% else %>
-      <ul id="nav-mobile" class="side-nav">
-        <li>
-          <%= link_to 'log in', login_path %>
-        </li>
-      </ul>
+        <% if current_user %>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <%= link_to 'all posts', posts_path %>
+            </li>
+            <li>
+              <%= link_to current_user.name, user_path(current_user) %>
+            </li>
+            <li>
+              <%= link_to 'feed', feed_path %>
+            </li>
+            <li>
+              <%= link_to 'log out', logout_path, method: :delete %>
+            </li>
+          </ul>
+          <% else %>
+          <ul id="nav-mobile" class="side-nav">
+            <li>
+              <%= link_to 'log in', login_path %>
+            </li>
+          </ul>
       <% end %>
-
-
     </div>
-
     <p id="notice"><%= notice %></p>
-
   </nav>
 
   <%= yield %>
 
 
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 </body>
 </html>
