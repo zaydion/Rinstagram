@@ -11,10 +11,19 @@
       <div class="row center">
 
       <%= link_to 'Log in', login_path, class: "btn-large waves-effect waves-light lime" %>
-      <%= link_to 'Sign Up', new_user_path, class: "btn-large waves-effect waves-light lime" %>
-      </div>
+      <%= link_to 'Sign Up', new_user_path, class: "btn-large waves-effect waves-light lime" %><br>
+
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-auto-logout-link="true">
+      </fb:login-button>
+      <div id="status"></div>
+
+           </div>
+
       <br><br>
+
+
     </div>
+
 
 
   <div class="col-s12 light-blue lighten-1">
